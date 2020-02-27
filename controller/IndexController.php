@@ -44,7 +44,11 @@ class IndexController extends Controller
         $izraz->execute(['korisnickoIme'=>$_POST['korisnickoIme']]);
         //$rezultat=$izraz->fetch(PDO::FETCH_OBJ);
         $rezultat=$izraz->fetch();
-            //echo $rezultat;
+
+            echo "<pre>";
+            print_r($rezultat);
+            echo "</pre>";
+            
         if($rezultat==null){
             $this->view->render('prijava',[
                 'poruka'=>'Ne postojeći korisnik',

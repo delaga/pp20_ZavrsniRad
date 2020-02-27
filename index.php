@@ -31,5 +31,5 @@ spl_autoload_register(function($klasa)
     }
     
 });
-echo password_hash('123',PASSWORD_BCRYPT);
+//echo password_hash('123',PASSWORD_BCRYPT);
 App::start();
