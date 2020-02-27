@@ -45,9 +45,9 @@ class IndexController extends Controller
         //$rezultat=$izraz->fetch(PDO::FETCH_OBJ);
         $rezultat=$izraz->fetch();
 
-            echo "<pre>";
+           /*  echo "<pre>";
             print_r($rezultat->lozinka);
-            echo "</pre>";
+            echo "</pre>"; */
 
         if($rezultat==null){
             $this->view->render('prijava',[
@@ -56,6 +56,14 @@ class IndexController extends Controller
             ]);
             return;
         }
+            #krpanje
+                echo "Upisana lozinka =" .$_POST['lozinka'] ."<br/>";
+                echo "lozinka u bazi=" . $rezultat->lozinka ."<br/>";
+               if(password_verify($_POST['lozinka'],$rezultat->lozinka)) {
+                   echo "OK";}
+                   else{
+                       echo "Nije";
+                   }
 
         if(!password_verify($_POST['lozinka'],$rezultat->lozinka)){
             $this->view->render('prijava',[
@@ -64,7 +72,7 @@ class IndexController extends Controller
             ]);
             return;
         }
-        unset($rezultat->lozinka);
+        //unset($rezultat->lozinka);
         $_SESSION['korisnickoIme']=$rezultat;
         //$this->view->render('privatno' . DIRECTORY_SEPARATOR . 'nadzornaPloca');
         $npc = new NadzornaplocaController();
