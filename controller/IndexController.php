@@ -56,7 +56,7 @@ class IndexController extends Controller
         if(!password_verify($_POST['lozinka'],$rezultat->lozinka)){
             $this->view->render('prijava',[
                 'poruka'=>'Neispravna kombinacija korisničko ime i lozinka',
-                'email'=>$_POST['email']
+                'korisnickoIme'=>$_POST['korisnickoIme']
             ]);
             return;
         }
