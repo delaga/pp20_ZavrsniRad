@@ -56,7 +56,7 @@ class IndexController extends Controller
             ]);
             return;
         }
-            #krpanje
+            #traženje
                 echo "Upisana lozinka =" .$_POST['lozinka'] ."<br/>";
                 echo "lozinka u bazi=" . $rezultat->lozinka ."<br/>";
                if(password_verify($_POST['lozinka'],$rezultat->lozinka)) {
@@ -64,7 +64,7 @@ class IndexController extends Controller
                    else{
                        echo "Nije";
                    }
-
+            # /traženje
         if(!password_verify($_POST['lozinka'],$rezultat->lozinka)){
             $this->view->render('prijava',[
                 'poruka'=>'Neispravna kombinacija korisničko ime i lozinka',
