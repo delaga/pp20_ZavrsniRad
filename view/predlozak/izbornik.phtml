@@ -10,7 +10,7 @@
             <?php echo APP::config('nazivAPP'); ?>
             </li>
             <li><a href="/">Početna</a></li>
-            <?php #if(isset($_SESSION['operater'])):?>
+            <?php if(isset($_SESSION['korisnik'])):?>
                 <li><a href="/nadzornaploca/index">Nadzorna ploča</a></li>
                 <li>
                     <a href="#">Programi</a>
@@ -21,12 +21,12 @@
                         <li><a href="/predavac/index">Predavači</a></li>
                     </ul>
                 </li>
-                <?php #if(isset($_SESSION['operater']) && $_SESSION['operater']->uloga==='admin'):?>
+                <?php if(isset($_SESSION['korisnik']) && $_SESSION['korisnik']->uloga==='3'):?>
                     <li><a href="/operater/index">Operateri</a></li>
-                <?php #else:?>
+                <?php else:?>
                     <li><a href="/nadzornaploca/profil">Profil</a></li>
-                <?php #endif;?>
-            <?php #endif;?>
+                <?php endif;?>
+            <?php endif;?>
             <li><a href="/index/onama">O nama</a></li>
         </ul>
     </div>

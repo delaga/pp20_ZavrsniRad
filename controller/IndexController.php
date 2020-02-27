@@ -60,11 +60,12 @@ class IndexController extends Controller
                 echo "Upisana lozinka =" .$_POST['lozinka'] ."<br/>";
                 echo "lozinka u bazi=" . $rezultat->lozinka ."<br/>";
                if(password_verify($_POST['lozinka'],$rezultat->lozinka)) {
-                   echo "OK";}
+                   echo "OK je";}
                    else{
-                       echo "Nije";
+                       echo "Nije dobro";
                    }
             # /traženje
+
         if(!password_verify($_POST['lozinka'],$rezultat->lozinka)){
             $this->view->render('prijava',[
                 'poruka'=>'Neispravna kombinacija korisničko ime i lozinka',
@@ -72,8 +73,8 @@ class IndexController extends Controller
             ]);
             return;
         }
-        //unset($rezultat->lozinka);
-        $_SESSION['korisnickoIme']=$rezultat;
+        unset($rezultat->lozinka);
+        $_SESSION[' ']=$rezultat;
         //$this->view->render('privatno' . DIRECTORY_SEPARATOR . 'nadzornaPloca');
         $npc = new NadzornaplocaController();
         $npc->index();
