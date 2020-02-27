@@ -7,7 +7,7 @@ class IndexController extends Controller
     {
         $this->view->render('prijava',[
             'poruka'=>'Unesite pristupne podatke',
-            'email'=>''
+            'korisnickoIme'=>''
         ]);
     }
 
@@ -17,7 +17,7 @@ class IndexController extends Controller
         !isset($_POST['lozinka'])){
             $this->view->render('prijava',[
                 'poruka'=>'Nisu postavljeni pristupni podaci',
-                'email' =>''
+                'korisnickoIme' =>''
             ]);
             return;
         }
@@ -26,7 +26,7 @@ class IndexController extends Controller
         trim($_POST['lozinka'])===''){
             $this->view->render('prijava',[
                 'poruka'=>'Pristupni podaci obavezno',
-                'email'=>$_POST['email']
+                'korisnickoIme'=>$_POST['korisnickoIme']
             ]);
             return;
         }
@@ -46,13 +46,13 @@ class IndexController extends Controller
         $rezultat=$izraz->fetch();
 
             echo "<pre>";
-            print_r($rezultat);
+            print_r($rezultat->lozinka);
             echo "</pre>";
-            
+
         if($rezultat==null){
             $this->view->render('prijava',[
                 'poruka'=>'Ne postojeći korisnik',
-                'email'=>$_POST['email']
+                'korisnickoIme'=>$_POST['korisnickoIme']
             ]);
             return;
         }
