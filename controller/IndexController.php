@@ -74,7 +74,7 @@ class IndexController extends Controller
             return;
         }
         unset($rezultat->lozinka);
-        $_SESSION[' ']=$rezultat;
+        $_SESSION['korisnik']=$rezultat;
         //$this->view->render('privatno' . DIRECTORY_SEPARATOR . 'nadzornaPloca');
         $npc = new NadzornaplocaController();
         $npc->index();

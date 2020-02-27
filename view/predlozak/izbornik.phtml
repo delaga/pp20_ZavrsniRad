@@ -10,23 +10,15 @@
             <?php echo APP::config('nazivAPP'); ?>
             </li>
             <li><a href="/">Početna</a></li>
-            <?php if(isset($_SESSION['korisnik'])):?>
-                <li><a href="/nadzornaploca/index">Nadzorna ploča</a></li>
-                <li>
-                    <a href="#">Programi</a>
-                    <ul class="vertical menu">
-                        <li><a href="/smjer/index">Smjerovi</a></li>
-                        <li><a href="/grupa/index">Grupe</a></li>
-                        <li><a href="/polaznik/index">Polaznici</a></li>
-                        <li><a href="/predavac/index">Predavači</a></li>
-                    </ul>
-                </li>
+            <li><a href="/">Forum</a></li>
+            
+                
                 <?php if(isset($_SESSION['korisnik']) && $_SESSION['korisnik']->uloga==='3'):?>
                     <li><a href="/operater/index">Operateri</a></li>
                 <?php else:?>
                     <li><a href="/nadzornaploca/profil">Profil</a></li>
                 <?php endif;?>
-            <?php endif;?>
+            
             <li><a href="/index/onama">O nama</a></li>
         </ul>
     </div>
