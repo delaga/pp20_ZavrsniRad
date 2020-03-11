@@ -1,0 +1,569 @@
+/*################################
+GENERAL
+##################################*/
+* {
+	margin: 0 auto;
+}
+@media print, screen and (max-width: 800px) {
+	html  {
+        min-height: 100%;
+		/*position: absolute;
+		overflow: hidden;*/
+		background-attachment: fixed !important;
+	}
+    header h3 {
+        font-size: 1.5rem !important;
+    }
+	#noBg {
+        overflow: hidden;
+        min-height: 35rem;
+		/*position: fixed;
+        display: grid;
+		*/
+	}
+    #dark {
+        width: fit-content;
+    }
+    #main-content-section {
+		opacity: 0.05;
+        display: table;
+    }
+    .kat h5 {
+        padding-top: 1.5rem !important;
+    }
+    .menu a {
+        font-size: 1rem !important;
+    }
+    .topicTitle {
+        font-size: 1.1rem !important;
+    }
+    .topicDetails,
+    .username,
+    .postAutor {
+        font-size: 1rem !important;
+    }
+    .postBody {
+        font-size: 1rem !important;
+    }
+    span {
+        font-size: 1rem !important;
+    }
+}
+html {
+	background: url(../images/stol.jpg) no-repeat center center fixed;
+	background-attachment: scroll;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body {
+    
+	background: none;
+	/*display: flex;
+	height: auto;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;*/
+}
+b {
+	vertical-align: -webkit-baseline-middle;
+}
+
+#main-content-section {
+	display: inline-block;
+	width: 100%;
+	min-height: 62.4vw;
+}
+#noBg > #main-content-section {
+	min-height: 65vw;
+}
+/*.forum {
+	overflow: hidden;
+}*/
+
+
+/*################################
+HEADER
+##################################*/
+header {
+	color: #ffcc00;
+	font-family: "Bookmark Old Style";
+	height: 17%;
+	display: grid;
+	text-shadow:
+    1px  1px 2px black,
+    1px -1px 2px black,
+   -1px  1px 2px black,
+   -1px -1px 2px black;
+}
+header h3 {
+	color: #33cccc;
+    font-size: 3.7vw;
+}
+.top-bar  {
+	background: transparent;
+}
+.top-bar ul {
+	background: transparent;
+}
+.menu {
+	border-bottom: 2px solid #392613;
+}
+.menu a {
+	color: #ffcc00;
+	font-size: 2.2vw;
+}
+.menu a:hover {
+	text-decoration: underline;
+	color: #33cccc;
+}
+.searchContainer {
+	display: block;
+	width: 20%;
+	float: right;
+}
+form.searchContainer input[type=text] {
+	width: 80%;
+	height: 2.05rem;
+	font-size: 1.7vw;
+	border: 1px solid #392613;
+	float: left;
+	background: #ffeb99;
+}
+form.searchContainer button {
+	float: left;
+	width: 18%;
+	height: 2.05rem;
+	background: #392613;
+	color: white;
+	font-size: 1.09rem;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
+}
+form.searchContainer button:hover {
+  	background: #33cccc;
+}
+form.searchContainer::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/*################################
+NASLOVNA
+##################################*/
+.contentNaslovna {
+	color: #ffcc00;
+	text-shadow: 3px 2px black;
+	/*white-space: pre;*/
+    text-align: justify;
+    font-family: "Bookmark Old Style";
+    letter-spacing: 0.08em;
+    display: flex;
+    width: 100%;
+    padding-top: 1.5rem;
+}
+span {
+	font-size: 2.9vw;
+	line-height: 1.7em;
+    /*display: contents;*/
+}
+/*################################
+LOG IN/REGISTER
+##################################*/
+#noBg {
+	background-color: rgb(0, 0, 0, 0.7);
+	width: 100%;
+    min-height: -webkit-fill-available;
+}
+.container {
+  width: 50vw;
+  padding-top: 3vw;
+}
+.large-offset-3 {
+    margin-left: 0; 
+}
+.panel {
+	border: 4vw solid #333300 !important; 
+	background-color: white;
+}
+.panel-login {
+	border-color: #ccc;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login > .panel-heading {
+	background-color: #fff;
+	border-color: #fff;
+	text-align: center;
+	padding-top: 2vw;
+}
+.panel-login > .panel-heading a{
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 1.5vw;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login > .panel-heading a.active{
+	color: #333300;
+	font-size: 2.4vw;
+}
+.panel-heading > .row > .large-6 {
+	width: 50%;
+}
+.panel-login>.panel-heading hr{
+	margin-top: 1vw;
+	margin-bottom: 0px;
+	clear: both;
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+	height: 4.5vw;
+	border: 1px solid #ddd;
+	font-size: 1.8vw;
+	font-weight: bolder;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+	outline:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: #ccc;
+}
+.panel-body {
+  padding: 1.5vw;
+  background-color: #fff;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 3.4vw;
+  padding: 0.6vw 1.2vw;
+}
+.form-group {
+  margin-bottom: 1.5vw;
+}
+.btn {
+    padding: 0.6vw 1.2vw;
+    margin-bottom: 0;
+    font-size: 1.4vw;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-login {
+	background-color: #88cc00 !important;
+	outline: none;
+	font-weight: normal;
+	text-transform: uppercase;
+	width: 35%;
+}
+.btn-login:hover,
+.btn-login:focus {
+	color: #fff;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
+}
+.forgot-password {
+	text-decoration: underline;
+	color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+	text-decoration: underline;
+	color: #666;
+}
+.btn-register {
+	background-color: #33cccc !important;
+	outline: none;
+	font-size: 1.4vw;
+	height: auto;
+	font-weight: normal;
+	padding: 1.4vw 0;
+	text-transform: uppercase;
+	width: 35%;
+}
+.btn-register:hover,
+.btn-register:focus {
+	color: #fff;
+	background-color: #1CA347;
+	border-color: #1CA347;
+}
+
+/*################################
+FORUM
+##################################*/
+.katWrap {
+	width: 100%;
+	height: 65vw;
+	display: flex;
+}
+.kat {
+	box-sizing: content-box;
+	width: 20vw;
+    height: 29vw;
+    color: black;
+	background-image: url(../images/papirBg.png);
+	background-size: cover;
+	text-align: center;
+	position: static;
+	display: inline-flex;
+}
+.kat:hover {
+   	transition: 0.3s;
+   	transform: scale(1.1);
+   	position: relative;
+   	z-index: 1;
+   	text-decoration: underline;
+}
+.kat a {
+	color: black;
+	display: inline-block;
+	text-decoration: none;
+}
+.kat h5 {
+	width: 100%;
+	position: static;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2.6vw;
+	font-family: Georgia;
+	padding-top: 4.6rem;
+}
+.med {
+	margin-left: 3rem;
+    margin-top: 18rem;
+	transform: rotateZ(-67deg);
+}
+.mup {
+	margin-top: 11rem;
+	margin-left: -3rem;
+	transform: rotateZ(-20deg);
+}
+.sudovi {
+	margin-top: 5rem;
+	margin-left: -2rem;
+	transform: rotateZ(-4deg);
+}
+.ud {
+	margin-top: 2rem;
+	margin-left: ;
+}
+.ud h5 {
+	padding-top: 3.5rem; 
+}
+.ostalo {
+	margin-top: 1rem;
+	margin-left: ;
+	transform: rotateZ(10deg);
+}
+
+/*################################
+FORUM-TABLES
+##################################*/
+h4 {
+	font-size: 1.4rem;
+	color: #33cccc;
+	text-shadow:
+    1px  1px 2px black,
+    1px -1px 2px black,
+   -1px  1px 2px black,
+   -1px -1px 2px black;
+    padding: 0.2rem 1.3rem;
+    margin-bottom: 0;
+}
+.tableBg {
+	background: linear-gradient(to top, #1a0d00 35%, #000000 150%) repeat scroll 0%;
+	border: 0.3vw solid rgb(77, 51, 25, 0.5);
+	background-repeat: repeat;
+	width: 100%;
+}
+table {
+	border-collapse: separate;
+	margin-bottom: 0.3rem;
+}
+tbody {
+	background: none;
+	color: #999;
+	
+}
+tbody tr:nth-child(even) {
+	background-color: transparent !important;
+}
+td {
+	display: table-cell;
+	padding: 0 0.625rem !important;
+	vertical-align: middle;
+}
+th {
+    color: #ADAEAE;
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-align: center;
+}
+h6 {
+	margin-bottom: 0;
+	font-size: 1.8vw;
+    color: white;
+    text-align: start;
+}
+h5 {
+    margin-bottom: 0 !important;
+}
+#dark {
+	background-color: rgb(26, 13, 0, 0.5);
+}
+.breadcrumbs {
+	float: left;
+	padding-top: 1vw;
+	margin-bottom: 0;
+}
+.breadcrumbs a {
+	color: #e67700;
+	font-weight: bold;
+}
+.dateTime {
+	float: right;
+	padding-top: 1vw;
+	color: #e67700;
+	margin-bottom: 0;
+}
+.note {
+	font-size: 1.2vw;
+}
+.pageheader a {
+	color: #33cccc;
+}
+.pagecontent  {
+	background: transparent;
+	border-collapse: collapse;
+    width: 100%;
+}
+.newTopic {
+	width: 17%;
+}
+.btn-nTopic {
+	border: 1px solid #33cccc;
+	border-radius: 5px;
+	padding: 0.3vw 0.5vw;
+	cursor: pointer;
+}
+.btnText {
+	font-size: 1.7vw;
+	color: #ffcc00;
+	padding-left: 0.3vw;
+}
+.nav {
+    margin: 0 0 2px 0;
+    color: #999;
+    font-weight: bold;
+    font-size: 1.5vw;
+    width: 13%;
+}
+.gensmall {
+    margin: 1px 1px;
+    font-size: 0.9em;
+}
+.gensmall a {
+	color: #E67700;
+}
+.gensmall a:hover {
+	color: white;
+}
+.icon {
+	display: inline;
+}
+.col1 {
+	background: rgb(26, 13, 0) none repeat scroll 0%;
+	border-left: 1px solid rgb(51, 26, 0, 0.94);
+	border-top: 1px solid rgb(51, 26, 0, 0.94);
+	color: #ADAEAE;
+}
+.col2 {
+	background: rgb(51, 26, 0, 0.5) none repeat scroll 0%;
+	border-left: 1px solid rgb(26, 13, 0);
+	border-top: 1px solid rgb(26, 13, 0);
+	color: #ADAEAE;
+}
+.col1 p, 
+.col2 p {
+	margin-bottom: 0;
+}
+.topicTitle {
+	color: #33cccc;
+	font-weight: bold;
+}
+.topicDetails,
+.username {
+	font-size: 1.4vw;
+}
+.username {
+	color: #E67700;
+}
+.postAutor {
+	text-align: center;
+	font-size: 1.7vw;
+}
+.postDetails {
+    color: #999;
+    font-size: 1.3vw;
+}
+.postBody {
+	color: #ADAEAE;
+	font-size: 1.6vw;
+	line-height: 2vw;
+}
+td.profile {
+    width: 20% !important;
+}
+.upBtn a {
+	font-size: ; 
+	color: #E67700;
+}
+.profilBtn {
+	background-color: #251700;
+	border: 1px solid #483300;
+	height: auto;
+	padding: 0.5vw 1vw;
+}
+.profilBtn a {
+	color: #987600;
+}
+.profilBtn a:hover {
+	color: #33cccc;
+}
+
+
+/*################################
+FOOTER 
+##################################*/
+.small-icon {
+	padding: 0 !important;
+}

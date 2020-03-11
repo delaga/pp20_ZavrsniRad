@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'nazivAPP' => 'Pravo Pravo',
+    'nazivAPP' => 'Prȁvo právo',
     'url' => 'https://www.delaga.hr/',
     'dev' => true,
     /*
